@@ -1,5 +1,5 @@
 DNS_TIME_STAMP %{MONTHDAY}-%{MONTH}-%{YEAR} %{TIME}
-DNS_HEADER %{DNS_TIME_STAMP:log_timestamp} %{PROG:program}: %{LOGLEVEL:loglevel}: %{USER:from} %{IP:ip}\#%{INT:port}
+DNS_HEADER %{DNS_TIME_STAMP:log_timestamp} %{PROG:program}: %{LOGLEVEL:loglevel}: %{USER:from} %{IP:ip}#%{INT:port}
 DNS_QUERY_1 %{DNS_HEADER} \(%{IPORHOST:request}\): %{WORD:stage}: %{IPORHOST:request2} %{WORD:rq_where} %{WORD:r_type} %{DATA:flags} \(%{IPORHOST:serviced_by}\)
 DNS_QUERY_2 %{DNS_HEADER} \(%{GREEDYDATA:request}\): %{WORD:stage}: %{GREEDYDATA:request2} %{WORD:rq_where} %{WORD:r_type} %{DATA:flags} \(%{GREEDYDATA}:serviced_by\)
 DNS_DROP_1 %{DNS_HEADER} \(%{IPORHOST:request}\): %{WORD:stage} %{GREEDYDATA:drop_reason} to %{IPORHOST:to}/%{INT:subnet} for %{IPORHOST:requester} %{GREEDYDATA:dr_type}  \(%{BASE16NUM:request_ID}\)
